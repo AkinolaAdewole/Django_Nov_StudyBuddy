@@ -9,3 +9,7 @@ class Room(models.Model):
     description = models.TextField(null=True, blank=True)
     # participant =
     updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) :
+        return self.name 
