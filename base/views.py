@@ -18,7 +18,8 @@ def room(request, pk):
     for i in rooms:
         if i['id'] == int(pk):
             room = 1
-    context = room
+    
+    context = {'room': room}
     return render(request,'base/room.html', context)
 
 # Create your views here.
