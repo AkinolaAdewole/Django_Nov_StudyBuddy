@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-   <a href="/">
-    <h1>LOGO</h1>
-   </a>
+    {% include 'navbar.html' %}
 
-   <hr>
+    {% block content %}
+
+    {% endblock %}
 </body>
 </html>
