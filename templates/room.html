@@ -6,7 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    {% include 'navbar.html' %}
-    <h1>ROOM</h1>
+    {% entends 'main.html' %}
+
+    {% block content %}
+
+       <h1>ROOM</h1>
+
+    {% endblock content %}
 </body>
 </html>
