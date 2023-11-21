@@ -13,8 +13,10 @@
        <h1>HOME</h1>
 
        <div>
-         <a href="{% url 'create-room' %}">Create room</a>
-        <div>
+            <div>
+                <a href="{% url 'create-room' %}">Create room</a>
+            </div>
+        <div>       
             {% for room in rooms %}
                 <div>
                     <span>@{{room.host.username}}</span>
