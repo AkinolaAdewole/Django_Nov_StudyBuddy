@@ -3,11 +3,11 @@ from django.http import HttpResponse
 from .models import Room
 
 
-rooms = [
-    {'id': 1, 'name': "Let us learn python"},
-    {'id': 2, 'name': "Design with me"},
-    {'id': 3, 'name': "Frontend developer"},
-] 
+# rooms = [
+#     {'id': 1, 'name': "Let us learn python"},
+#     {'id': 2, 'name': "Design with me"},
+#     {'id': 3, 'name': "Frontend developer"},
+# ] 
 
 def home(request):
     rooms= Room.objects.all()
@@ -20,7 +20,7 @@ def room(request, pk):
     # for i in rooms:
     #     if i['id'] == int(pk):
     #         room = i
-    room = Room.objects.get()
+    room = Room.objects.get(id=pk)
     
     context = {'room': room}
     return render(request,'base/room.html', context)

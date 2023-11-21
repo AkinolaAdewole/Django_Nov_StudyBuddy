@@ -13,3 +13,8 @@ class Room(models.Model):
 
     def __str__(self) :
         return self.name 
+    
+
+class Message(models.Model):
+    # user
+    room = models.ForeignKey(Room)
