@@ -1,0 +1,31 @@
+render and redirect are functions provided by Django for rendering templates and 
+performing redirects.
+HttpResponse is used to return an HTTP response.
+Room and Topic are Django models imported from models.py.
+RoomForm is a Django form used for creating or updating rooms, imported from forms.py.
+Functions:
+1. home(request)
+Retrieves all Room and Topic objects from the database and renders the 'index.html' template.
+Passes rooms and topics to the template for display.
+2. room(request, pk)
+Retrieves a specific room using its primary key (pk).
+Renders the 'room.html' template and passes the room object to display details of the specific room.
+3. createRoom(request)
+Creates a new RoomForm instance.
+Handles form submission for creating a new room.
+If the form data is valid, saves the form and redirects to the 'home' view.
+Renders the 'room_form.html' template with the form if it's a GET request or the form is invalid.
+4. updateRoom(request, pk)
+Retrieves a specific room using its primary key (pk) and creates a RoomForm instance pre-filled with room data.
+Handles form submission for updating the room details.
+If the form data is valid, updates the room and redirects to the 'home' view.
+Renders the 'room_form.html' template with the form if it's a GET request or the form is invalid.
+5. deleteRoom(request, pk)
+Retrieves a specific room using its primary key (pk).
+If the request method is POST, deletes the room and redirects to the 'home' view.
+Renders the 'delete.html' template to confirm the deletion action if it's not a 
+POST request.
+Please note, the commented-out code (e.g., the rooms list) seems to be placeholder data or old implementations that were previously \
+used before the models were introduced. These comments might have served as a reference or initial implementation before database integration.
+
+If you have any specific questions or need further clarification about any part of the code, feel free to ask!
